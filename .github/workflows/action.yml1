@@ -11,6 +11,11 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+      - name: Setup Node and Cache Deps
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.7.0"
+          cache: "yarn"
       - name: Deploy to Netlify
         uses: jsmrcaga/action-netlify-deploy@v2.0.0
         with:
